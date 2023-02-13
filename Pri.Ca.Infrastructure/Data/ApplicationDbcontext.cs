@@ -15,10 +15,12 @@ namespace Pri.Ca.Infrastructure.Data
 
         public ApplicationDbcontext(DbContextOptions<ApplicationDbcontext> options) : base(options)
         {
+        
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            Seeder.Seed(modelBuilder);
             base.OnModelCreating(modelBuilder);
         }
     }
